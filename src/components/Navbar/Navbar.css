@@ -1,0 +1,13 @@
+nav {
+  background-color: #eda41e;
+  color: white;
+  height: 65px;
+  font-size: 25px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  text-align: center;
+}
