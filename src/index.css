@@ -31,6 +31,25 @@ body {
   background-color: #d2dff3;
 }
 
+/* レスポンシブ対応のための基本設定 */
+* {
+  box-sizing: border-box;
+}
+
+/* モバイル向けの調整 */
+@media (max-width: 768px) {
+  body {
+    display: block;
+    place-items: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

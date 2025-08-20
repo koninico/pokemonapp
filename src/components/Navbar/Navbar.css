@@ -9,5 +9,27 @@ nav {
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
+  top: 0;
   text-align: center;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 10px;
+}
+
+/* タブレット向けの調整 */
+@media (max-width: 768px) {
+  nav {
+    height: 60px;
+    font-size: 22px;
+    padding: 0 15px;
+  }
+}
+
+/* スマートフォン向けの調整 */
+@media (max-width: 480px) {
+  nav {
+    height: 55px;
+    font-size: 18px;
+    padding: 0 10px;
+  }
 }

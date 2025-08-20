@@ -1,16 +1,69 @@
 .card {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   box-shadow: 1px 6px 18px -5px #777777;
   border-radius: 13px;
   background-color: white;
+  transition: transform 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
 .cardName {
-  padding: 0;
+  padding: 0 10px;
   font-size: 20px;
   margin-bottom: 10px;
   margin-top: 0;
+  word-wrap: break-word;
 }
 
 .cardInfo {
   text-align: center;
+  padding: 10px;
+}
+
+/* ポケモン画像のレスポンシブ対応 */
+.card img {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+}
+
+/* タブレット向けの調整 */
+@media (max-width: 768px) {
+  .card {
+    max-width: 180px;
+  }
+  
+  .cardName {
+    font-size: 18px;
+    padding: 0 8px;
+  }
+  
+  .cardInfo {
+    padding: 8px;
+  }
+}
+
+/* スマートフォン向けの調整 */
+@media (max-width: 480px) {
+  .card {
+    max-width: 150px;
+  }
+  
+  .cardName {
+    font-size: 16px;
+    padding: 0 5px;
+    margin-bottom: 8px;
+  }
+  
+  .cardInfo {
+    padding: 5px;
+  }
+  
+  .card img {
+    max-width: 120px;
+  }
 }
