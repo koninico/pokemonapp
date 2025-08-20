@@ -48,6 +48,8 @@ function App() {
     setNextURL(data.next); //次のページのURLを更新
     setPrevURL(data.previous); //前のページのURLを更新
     setLoading(false); //データの読み込みが完了したら、loadingをfalseに設定
+    // ページトップにスクロール
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handlePrevPage = async () => {
@@ -59,6 +61,8 @@ function App() {
     setNextURL(data.next); //次のページのURLを更新
     setPrevURL(data.previous); //前のページのURLを更新
     setLoading(false); //データの読み込みが完了したら、loadingをfalseに設定
+    // ページトップにスクロール
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

@@ -1,10 +1,15 @@
 .card {
   width: 100%;
   max-width: 200px;
+  height: 320px; /* 固定高さを追加 */
   box-shadow: 1px 6px 18px -5px #777777;
   border-radius: 13px;
   background-color: white;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* カード外へのはみ出しを防ぐ */
 }
 
 .card:hover {
@@ -12,38 +17,107 @@
 }
 
 .cardName {
-  padding: 0 10px;
-  font-size: 20px;
-  margin-bottom: 10px;
-  margin-top: 0;
+  padding: 0 8px;
+  font-size: 16px;
+  margin-bottom: 3px;
+  margin-top: 3px;
   word-wrap: break-word;
+  text-align: center;
+  flex-shrink: 0; /* 高さを固定 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .cardInfo {
   text-align: center;
-  padding: 10px;
+  padding: 5px 8px;
+  flex-grow: 1; /* 余った空間を使用 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.cardImg {
+  text-align: center;
+  flex-shrink: 0; /* 高さを固定 */
+  height: 100px; /* 画像エリアの固定高さを縮小 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardType {
+  text-align: center;
+  margin: 3px 0;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.cardData {
+  margin: 2px 0;
+  overflow: hidden;
+}
+
+.cardData .title {
+  margin: 0;
+  padding: 1px 0;
+  font-size: 11px;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.typeName {
+  font-size: 11px;
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin: 1px;
+  display: inline-block;
 }
 
 /* ポケモン画像のレスポンシブ対応 */
 .card img {
-  width: 100%;
+  width: auto;
   height: auto;
-  max-width: 150px;
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: contain;
 }
 
 /* タブレット向けの調整 */
 @media (max-width: 768px) {
   .card {
     max-width: 180px;
+    height: 300px; /* タブレット用の高さ調整 */
   }
-  
+
   .cardName {
-    font-size: 18px;
-    padding: 0 8px;
+    font-size: 15px;
+    padding: 0 6px;
   }
-  
+
   .cardInfo {
-    padding: 8px;
+    padding: 4px 6px;
+  }
+
+  .cardImg {
+    height: 90px;
+  }
+
+  .card img {
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+  .cardData .title {
+    font-size: 10px;
+  }
+
+  .typeName {
+    font-size: 10px;
   }
 }
 
@@ -51,19 +125,38 @@
 @media (max-width: 480px) {
   .card {
     max-width: 150px;
+    height: 260px; /* スマートフォン用の高さ調整 */
   }
-  
+
   .cardName {
-    font-size: 16px;
-    padding: 0 5px;
-    margin-bottom: 8px;
+    font-size: 14px;
+    padding: 0 4px;
+    margin-bottom: 2px;
   }
-  
+
   .cardInfo {
-    padding: 5px;
+    padding: 3px 4px;
   }
-  
+
+  .cardImg {
+    height: 70px;
+  }
+
   .card img {
-    max-width: 120px;
+    max-width: 60px;
+    max-height: 60px;
+  }
+
+  .cardData .title {
+    font-size: 9px;
+  }
+
+  .typeName {
+    font-size: 9px;
+    padding: 1px 3px;
+  }
+
+  .cardType {
+    font-size: 10px;
   }
 }
