@@ -41,6 +41,9 @@ function App() {
   // console.log(pokemonData); //ポケモンの詳細データをコンソールに表示
 
   const handleNextPage = async () => {
+    // 即座にページトップにスクロール
+    window.scrollTo(0, 0);
+
     setLoading(true); //前のページのポケモンデータを取得する前にloadingをtrueに設定
     let data = await getAllPokemon(nextURL); //nextURLからポケモンデータを取得
     console.log(data);
@@ -48,12 +51,19 @@ function App() {
     setNextURL(data.next); //次のページのURLを更新
     setPrevURL(data.previous); //前のページのURLを更新
     setLoading(false); //データの読み込みが完了したら、loadingをfalseに設定
-    // ページトップにスクロール
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 念のため再度スクロール
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
   };
 
   const handlePrevPage = async () => {
     if (!prevURL) return; //前のページがない場合は何もしない
+
+    // 即座にページトップにスクロール
+    window.scrollTo(0, 0);
+
     setLoading(true); //前のページのポケモンデータを取得する前にloadingをtrueに設定
     let data = await getAllPokemon(prevURL); //prevURLからポケモンデータを取得
     console.log(data);
@@ -61,8 +71,11 @@ function App() {
     setNextURL(data.next); //次のページのURLを更新
     setPrevURL(data.previous); //前のページのURLを更新
     setLoading(false); //データの読み込みが完了したら、loadingをfalseに設定
-    // ページトップにスクロール
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 念のため再度スクロール
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
   };
 
   return (
